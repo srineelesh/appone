@@ -19,10 +19,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
+
+import com.intv.appone.util.TomcatConfigurationUtil;
 
 @SpringBootApplication
 @ImportResource({ "classpath:META-INF/cxf/cxf.xml", "classpath:META-INF/cxf/cxf-servlet.xml" })
+@Import({TomcatConfigurationUtil.class})
 public class ApponeApplication {
 
 	private static final String SERVICE_CONTEXT = "service";
